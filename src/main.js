@@ -1,6 +1,8 @@
 SPRITES_URL =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
 
+TYPES_URL = "https://pokeapi.co/api/v2/type/";
+
 /** Searches the pokemon on pokeapi site
  * @param {function} [action] The action to do with the data
  * @const {JSON} [data] The data received from the api
@@ -38,10 +40,11 @@ const printInfo = (pokemon) => {
   createElementWithData(`height = ${pokemon.height}`, `#${infoDiv.id}`);
   let types = "";
   pokemon.types.forEach((element) => {
-    types += `${element.type.name}, `;
+    types += `<span class="${element.type.name}">${element.type.name}</span>, `;
   });
   types = types.substring(0, types.length - 2);
-  createElementWithData(`type = ${types}`, `#${infoDiv.id}`);
+  let typeDiv = createElementWithData(`type = ${types}`, `#${infoDiv.id}`);
+  typeDiv.className = "types";
 };
 
 /** Changes the sprite to back sprite on hover
@@ -56,6 +59,38 @@ const imgFrontBack = (event) => {
     () => (img.src = `${SPRITES_URL}${img.id}.png`)
   );
 };
+
+const searchTypes = async (event) => {
+  if (event.target.parentElement.className !== "types") return;
+  let type = event.target.className;
+  try {
+    const { data } = await axios.get(`${TYPES_URL}${type}`);
+    console.log(data);
+    printTypes(data);
+    return data;
+  } catch {
+    createElementWithData(
+      `Looking for ${type} didn't work!`,
+      "#results",
+      "div"
+    );
+  }
+};
+
+function printTypes(data) {
+  // let typesDiv = createElementWithData("", "#results", "div");
+  let names = "";
+  data.pokemon.forEach((item) => {
+    names += `<span id="${item.pokemon.name}">${item.pokemon.name}</span>, `;
+  });
+  names = names.substring(0, names.length - 2);
+  let results = document.querySelector("#results");
+  results.innerHTML = "";
+  createElementWithData(
+    `<h2>${data.name} Pokemon's</h2> <div id="allPokes">${names}</div>`,
+    "#results"
+  );
+}
 
 /** Creates an element in document and prints with the data gathered
  * @param {string} [data=""] The data to show
@@ -88,4 +123,5 @@ function getPokemonIdOrName() {
 }
 
 myQueryAndEventListener("#searchButton", searchPokemon);
+document.addEventListener("click", searchTypes);
 document.addEventListener("mouseover", imgFrontBack);
