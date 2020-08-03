@@ -22,6 +22,8 @@ const printInfo = (pokemon) => {
   createElementWithData(`name = ${pokemon.name}`, `#${infoDiv.id}`);
   createElementWithData(`weight = ${pokemon.weight}`, `#${infoDiv.id}`);
   createElementWithData(`height = ${pokemon.height}`, `#${infoDiv.id}`);
+  let pokePic = createElementWithData("", `#${infoDiv.id}`, "img");
+  pokePic.src = pokemon.sprites.front_default;
 };
 
 /** Creates an element in document and prints with the data gathered
@@ -55,4 +57,3 @@ function getPokemonIdOrName() {
 }
 
 myQueryAndEventListener("#searchButton", searchPokemon);
-// searchPokemon();
