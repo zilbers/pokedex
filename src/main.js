@@ -9,7 +9,9 @@ TYPES_URL = "https://pokeapi.co/api/v2/type/";
  * @let {string} [pokemonIdOrName] The id or name of the pokemon to search
  */
 const searchPokemon = async () => {
-  let pokemonIdOrName = getPokemonIdOrName() || 25;
+  let input = document.querySelector("#search");
+  let pokemonIdOrName = input.value || 25;
+  input.value = "";
   try {
     const { data } = await axios.get(
       `http://pokeapi.co/api/v2/pokemon/${pokemonIdOrName}`
@@ -80,11 +82,19 @@ const searchTypes = async (event) => {
   }
 };
 
-/** Prints all the pokemons of the same type
+const searchPokemonFromTypes = (event) => {
+  if (event.target.parentElement.id !== "allPokes") return;
+  let pokeToFind = event.target.id;
+  let input = document.querySelector("#search");
+  input.value = pokeToFind;
+  searchPokemon();
+  event.target.parentElement.remove();
+};
+
+/** Prints all the pokemon's of the same type
  * @param {object} data About all the pokemons of the same type
  */
 function printTypes(data) {
-  // let typesDiv = createElementWithData("", "#results", "div");
   let names = "";
   data.pokemon.forEach((item) => {
     names += `<span id="${item.pokemon.name}">${item.pokemon.name}</span>, `;
@@ -93,7 +103,7 @@ function printTypes(data) {
   let results = document.querySelector("#results");
   results.innerHTML = "";
   createElementWithData(
-    `<h2>${data.name} Pokemon's</h2> <div id="allPokes">${names}</div>`,
+    `<div id="allPokes"><h2>${data.name} Pokemon's</h2> ${names}</div>`,
     "#results"
   );
 }
@@ -121,13 +131,7 @@ function myQueryAndEventListener(element, listener, type = "click") {
   elem.addEventListener(type, listener);
 }
 
-/** Return the value of input
- */
-function getPokemonIdOrName() {
-  let input = document.querySelector("#search");
-  return input.value;
-}
-
 myQueryAndEventListener("#searchButton", searchPokemon);
+document.addEventListener("click", searchPokemonFromTypes);
 document.addEventListener("click", searchTypes);
 document.addEventListener("mouseover", imgFrontBack);
