@@ -16,7 +16,11 @@ const searchPokemon = async () => {
     printInfo(data);
     return data;
   } catch {
-    alert("Pokemon doesn't EXIST!");
+    createElementWithData(
+      `${pokemonIdOrName} doesn't exist!`,
+      "#results",
+      "div"
+    );
   }
 };
 
@@ -26,12 +30,17 @@ const searchPokemon = async () => {
 const printInfo = (pokemon) => {
   let infoDiv = createElementWithData("", "#results", "div");
   infoDiv.id = `${pokemon.name}Box`;
-  createElementWithData(`name = ${pokemon.name}`, `#${infoDiv.id}`);
-  createElementWithData(`weight = ${pokemon.weight}`, `#${infoDiv.id}`);
-  createElementWithData(`height = ${pokemon.height}`, `#${infoDiv.id}`);
   let pokePic = createElementWithData("", `#${infoDiv.id}`, "img");
   pokePic.id = `${pokemon.id}`;
   pokePic.src = pokemon.sprites.front_default;
+  createElementWithData(`name = ${pokemon.name}`, `#${infoDiv.id}`);
+  createElementWithData(`weight = ${pokemon.weight}`, `#${infoDiv.id}`);
+  createElementWithData(`height = ${pokemon.height}`, `#${infoDiv.id}`);
+  let types = "";
+  pokemon.types.forEach((element) => {
+    types += `${element.type.name} `;
+  });
+  createElementWithData(`type = ${types}`, `#${infoDiv.id}`);
 };
 
 /** Changes the sprite to back sprite on hover
@@ -52,7 +61,7 @@ const imgFrontBack = (event) => {
  * @param {string} [type="span"] The type of element to create
  * @param {string} [father] Where to append the child
  */
-function createElementWithData(data = "", father, type = "span") {
+function createElementWithData(data = "", father, type = "div") {
   let infoBox = document.querySelector(father);
   let elem = document.createElement(type);
   elem.innerHTML = data;
