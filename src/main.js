@@ -1,3 +1,6 @@
+SPRITES_URL =
+  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
+
 /** Searches the pokemon on pokeapi site
  * @param {function} [action] The action to do with the data
  * @const {JSON} [data] The data received from the api
@@ -18,12 +21,23 @@ const searchPokemon = async () => {
  */
 const printInfo = (pokemon) => {
   let infoDiv = createElementWithData("", "#results", "div");
-  infoDiv.id = pokemon.name;
+  infoDiv.id = `${pokemon.name}Box`;
   createElementWithData(`name = ${pokemon.name}`, `#${infoDiv.id}`);
   createElementWithData(`weight = ${pokemon.weight}`, `#${infoDiv.id}`);
   createElementWithData(`height = ${pokemon.height}`, `#${infoDiv.id}`);
   let pokePic = createElementWithData("", `#${infoDiv.id}`, "img");
+  pokePic.id = `${pokemon.id}`;
   pokePic.src = pokemon.sprites.front_default;
+};
+
+/** Changes the sprite to back sprite on hover
+ * @param {object} event Event who sets the listener
+ */
+const imgFrontBack = (event) => {
+  if (event.target.tagName.toLowerCase() !== "img") return;
+  let img = event.target;
+  img.src = `${SPRITES_URL}back/${img.id}.png`;
+  img.addEventListener("mouseout", () => img.src = `${SPRITES_URL}${img.id}.png`);
 };
 
 /** Creates an element in document and prints with the data gathered
@@ -57,3 +71,4 @@ function getPokemonIdOrName() {
 }
 
 myQueryAndEventListener("#searchButton", searchPokemon);
+document.addEventListener("mouseover", imgFrontBack);
