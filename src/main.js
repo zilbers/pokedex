@@ -82,6 +82,9 @@ const searchTypes = async (event) => {
   }
 };
 
+/** Shows the pokemon from the type list
+ * @param {*} event The element who set the listener
+ */
 const searchPokemonFromTypes = (event) => {
   if (event.target.parentElement.id !== "allPokes") return;
   let pokeToFind = event.target.id;
