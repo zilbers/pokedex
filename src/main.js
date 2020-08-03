@@ -38,8 +38,9 @@ const printInfo = (pokemon) => {
   createElementWithData(`height = ${pokemon.height}`, `#${infoDiv.id}`);
   let types = "";
   pokemon.types.forEach((element) => {
-    types += `${element.type.name} `;
+    types += `${element.type.name}, `;
   });
+  types = types.substring(0, types.length - 2);
   createElementWithData(`type = ${types}`, `#${infoDiv.id}`);
 };
 
