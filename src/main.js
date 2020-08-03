@@ -8,12 +8,16 @@ SPRITES_URL =
  */
 const searchPokemon = async () => {
   let pokemonIdOrName = getPokemonIdOrName() || 25;
-  const { data } = await axios.get(
-    `http://pokeapi.co/api/v2/pokemon/${pokemonIdOrName}`
-  );
-  console.log(data);
-  printInfo(data);
-  return data;
+  try {
+    const { data } = await axios.get(
+      `http://pokeapi.co/api/v2/pokemon/${pokemonIdOrName}`
+    );
+    console.log(data);
+    printInfo(data);
+    return data;
+  } catch {
+    alert("Pokemon doesn't EXIST!");
+  }
 };
 
 /** Prints the name, weight and height to the document
@@ -37,7 +41,10 @@ const imgFrontBack = (event) => {
   if (event.target.tagName.toLowerCase() !== "img") return;
   let img = event.target;
   img.src = `${SPRITES_URL}back/${img.id}.png`;
-  img.addEventListener("mouseout", () => img.src = `${SPRITES_URL}${img.id}.png`);
+  img.addEventListener(
+    "mouseout",
+    () => (img.src = `${SPRITES_URL}${img.id}.png`)
+  );
 };
 
 /** Creates an element in document and prints with the data gathered
