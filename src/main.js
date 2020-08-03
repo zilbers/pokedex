@@ -60,6 +60,9 @@ const imgFrontBack = (event) => {
   );
 };
 
+/** Look for all the pokemon's of the same type
+ * @param {*} event the event who set the listener
+ */
 const searchTypes = async (event) => {
   if (event.target.parentElement.className !== "types") return;
   let type = event.target.className;
@@ -77,6 +80,9 @@ const searchTypes = async (event) => {
   }
 };
 
+/** Prints all the pokemons of the same type
+ * @param {object} data About all the pokemons of the same type
+ */
 function printTypes(data) {
   // let typesDiv = createElementWithData("", "#results", "div");
   let names = "";
