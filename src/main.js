@@ -42,10 +42,13 @@ const printInfo = (pokemon) => {
   createElementWithData(`height = ${pokemon.height}`, `#${infoDiv.id}`);
   let types = "";
   pokemon.types.forEach((element) => {
-    types += `<span class="${element.type.name}">${element.type.name}</span>, `;
+    types += `<li class="${element.type.name}">${element.type.name}</li> `;
   });
   types = types.substring(0, types.length - 2);
-  let typeDiv = createElementWithData(`type = ${types}`, `#${infoDiv.id}`);
+  let typeDiv = createElementWithData(
+    `type<ul>${types}</ul>`,
+    `#${infoDiv.id}`
+  );
   typeDiv.className = "types";
 };
 
@@ -66,7 +69,7 @@ const imgFrontBack = (event) => {
  * @param {*} event the event who set the listener
  */
 const searchTypes = async (event) => {
-  if (event.target.parentElement.className !== "types") return;
+  if (event.target.parentElement.parentElement.className !== "types") return;
   let type = event.target.className;
   try {
     const { data } = await axios.get(`${TYPES_URL}${type}`);
