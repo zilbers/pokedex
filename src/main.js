@@ -8,9 +8,14 @@ TYPES_URL = "https://pokeapi.co/api/v2/type/";
  * @const {JSON} [data] The data received from the api
  * @let {string} [pokemonIdOrName] The id or name of the pokemon to search
  */
-const searchPokemon = async () => {
+const searchPokemon = async (event) => {
+  if (event){
+    if (event.type === "keypress") {
+      if (event.key !== "Enter") return;
+    }
+  }
   let input = document.querySelector("#search");
-  let pokemonIdOrName = input.value || 25;
+  let pokemonIdOrName = input.value.toLowerCase() || 25;
   input.value = "";
   try {
     const { data } = await axios.get(
@@ -141,3 +146,4 @@ myQueryAndEventListener("#searchButton", searchPokemon);
 document.addEventListener("click", searchPokemonFromTypes);
 document.addEventListener("click", searchTypes);
 document.addEventListener("mouseover", imgFrontBack);
+document.addEventListener("keypress",searchPokemon);
