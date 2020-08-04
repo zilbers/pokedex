@@ -1,0 +1,85 @@
+.normal {
+  background: silver;
+}
+
+.grass {
+  background: green;
+}
+
+.fire {
+  background: red;
+}
+
+.water {
+  background: lightblue;
+}
+
+.fighting {
+  background: brown;
+}
+
+.flying {
+  background: lightskyblue;
+}
+
+.poison {
+    background: rgb(119, 71, 119);
+}
+.ground {
+    background: sandybrown;
+}
+
+.rock {
+    background: burlywood;
+}
+
+.bug {
+    background: yellowgreen;
+}
+
+.ghost {
+    background: rgb(111, 111, 248);
+}
+
+.electric {
+    background: rgb(255, 230, 0);
+}
+
+.psychic {
+    background: palevioletred;
+}
+
+.ice {
+    background: rgb(113, 238, 255);
+}
+
+.dragon {
+    background: cornflowerblue;
+}
+
+.dark {
+    background: rgb(71, 55, 50);
+}
+
+.steel {
+    background: rgb(150, 160, 192);
+}
+
+.fairy {
+    background: rgb(236, 213, 236);
+}
+
+li {
+    border-radius: 30%;
+    border: solid;
+    padding: 0px;
+}
+
+li:hover{
+    cursor: pointer;
+
+}
+
+ul {
+    list-style-type: none;
+}
