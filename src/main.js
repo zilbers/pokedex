@@ -112,13 +112,13 @@ const searchPokemonFromTypes = (event) => {
 function printTypes(data) {
   let names = "";
   data.pokemon.forEach((item) => {
-    names += `<span id="${item.pokemon.name}">${item.pokemon.name}</span>, `;
+    names += `<span class="typeTable" id="${item.pokemon.name}">${item.pokemon.name}</span> `;
   });
   names = names.substring(0, names.length - 2);
   let results = document.querySelector("#results");
   results.innerHTML = "";
   createElementWithData(
-    `<div id="allPokes"><h2>${data.name} Pokemon's</h2> ${names}</div>`,
+    `<div id="allPokes"><h2 class="pokeHead">${data.name} Pokemon's</h2> ${names}</div>`,
     "#results"
   );
 }

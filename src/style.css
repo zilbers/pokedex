@@ -8,46 +8,61 @@ body {
 }
 
 img {
-    display: block;
-    margin: auto;
+  display: block;
+  margin: auto;
 }
 
 div {
-    margin: 10px;
+  margin: 10px;
 }
 
-#searchDiv{
-    background-image: url("./input.jpg");
-    background-size: 33% 110%;
-    width: 95%;
-    padding: 20px;
-    height: 80px;
-    position: relative;
-    top: 0;
-    left: 0;
-}
-
-#pokeHead {
-    position: relative;
-    color: yellow;
-    margin-bottom: 10px;
-    text-shadow: 3px 3px #2600ff;
-
+#searchDiv {
+  background-image: url("./input.jpg");
+  background-size: 33% 110%;
+  width: 95%;
+  padding: 20px;
+  height: 80px;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 #search {
-    width: 80%;
-    height: 20px;
+  width: 80%;
+  height: 20px;
 }
 
 #searchButton {
-    height: 20px;
+  height: 20px;
 }
 
 #results {
   align-content: center;
   margin: auto;
   width: 27%;
+}
+
+#allPokes {
+  width: 200%;
+}
+
+.pokeHead {
+  position: relative;
+  color: yellow;
+  margin-bottom: 10px;
+  text-shadow: 3px 3px #2600ff;
+}
+
+.typeTable {
+  background: silver;
+  border-radius: 10%;
+  border: solid;
+  padding: 3px;
+  display: inline-block;
+}
+
+.typeTable:hover {
+  cursor: pointer;
 }
 
 .pokeDiv {
