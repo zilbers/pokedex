@@ -9,7 +9,7 @@ TYPES_URL = "https://pokeapi.co/api/v2/type/";
  * @let {string} [pokemonIdOrName] The id or name of the pokemon to search
  */
 const searchPokemon = async (event) => {
-  if (event){
+  if (event) {
     if (event.type === "keypress") {
       if (event.key !== "Enter") return;
     }
@@ -37,23 +37,26 @@ const searchPokemon = async (event) => {
  * @param {JSON} pokemon The data received from pokeapi
  */
 const printInfo = (pokemon) => {
+  let results = document.querySelector("#results");
+  results.innerHTML = "";
   let infoDiv = createElementWithData("", "#results", "div");
   infoDiv.id = `${pokemon.name}Box`;
+  infoDiv.className = "pokeDiv";
   let pokePic = createElementWithData("", `#${infoDiv.id}`, "img");
   pokePic.id = `${pokemon.id}`;
-  pokePic.src = pokemon.sprites.front_default;
-  createElementWithData(`name = ${pokemon.name}`, `#${infoDiv.id}`);
-  createElementWithData(`weight = ${pokemon.weight}`, `#${infoDiv.id}`);
-  createElementWithData(`height = ${pokemon.height}`, `#${infoDiv.id}`);
+  pokePic.src = pokemon.sprites.front_default
+    ? pokemon.sprites.front_default
+    : "./no-image.jpg";
+  !pokemon.sprites.front_default ? (pokePic.className = "noImg") : "";
+  createElementWithData(`name: ${pokemon.name}`, `#${infoDiv.id}`);
+  createElementWithData(`weight: ${pokemon.weight}`, `#${infoDiv.id}`);
+  createElementWithData(`height: ${pokemon.height}`, `#${infoDiv.id}`);
   let types = "";
   pokemon.types.forEach((element) => {
-    types += `<li class="${element.type.name}">${element.type.name}</li> `;
+    types += `<span class="typeBox ${element.type.name}">${element.type.name}</span> `;
   });
   types = types.substring(0, types.length - 2);
-  let typeDiv = createElementWithData(
-    `type<ul>${types}</ul>`,
-    `#${infoDiv.id}`
-  );
+  let typeDiv = createElementWithData(`types: ${types}`, `#${infoDiv.id}`);
   typeDiv.className = "types";
 };
 
@@ -63,6 +66,7 @@ const printInfo = (pokemon) => {
 const imgFrontBack = (event) => {
   if (event.target.tagName.toLowerCase() !== "img") return;
   let img = event.target;
+  if (img.className === "noImg") return;
   img.src = `${SPRITES_URL}back/${img.id}.png`;
   img.addEventListener(
     "mouseout",
@@ -74,8 +78,8 @@ const imgFrontBack = (event) => {
  * @param {*} event the event who set the listener
  */
 const searchTypes = async (event) => {
-  if (event.target.parentElement.parentElement.className !== "types") return;
-  let type = event.target.className;
+  if (event.target.parentElement.className !== "types") return;
+  let type = event.target.classList[1];
   try {
     const { data } = await axios.get(`${TYPES_URL}${type}`);
     console.log(data);
@@ -146,4 +150,4 @@ myQueryAndEventListener("#searchButton", searchPokemon);
 document.addEventListener("click", searchPokemonFromTypes);
 document.addEventListener("click", searchTypes);
 document.addEventListener("mouseover", imgFrontBack);
-document.addEventListener("keypress",searchPokemon);
+document.addEventListener("keypress", searchPokemon);

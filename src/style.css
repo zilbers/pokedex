@@ -1,3 +1,79 @@
+body {
+  background-image: url("./background.png");
+  background-color: #90ff8c;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  text-align: center;
+  font-family: "Press Start 2P", cursive;
+}
+
+img {
+    display: block;
+    margin: auto;
+}
+
+div {
+    margin: 10px;
+}
+
+#searchDiv{
+    background-image: url("./input.jpg");
+    background-size: 33% 110%;
+    width: 95%;
+    padding: 20px;
+    height: 80px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#pokeHead {
+    position: relative;
+    color: yellow;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px #2600ff;
+
+}
+
+#search {
+    width: 80%;
+    height: 20px;
+}
+
+#searchButton {
+    height: 20px;
+}
+
+#results {
+  align-content: center;
+  margin: auto;
+  width: 27%;
+}
+
+.pokeDiv {
+  background: rgba(255, 255, 255, 0.493);
+  text-align: left;
+  padding: 20px;
+  font-size: 15px;
+}
+
+.typeBox {
+  position: relative;
+  border-radius: 25%;
+  border: solid;
+  padding: 3px;
+  display: inline-block;
+}
+
+.typeBox:hover {
+  cursor: pointer;
+}
+
+.noImg {
+  height: 96px;
+  width: 96px;
+}
+
 .normal {
   background: silver;
 }
@@ -23,63 +99,48 @@
 }
 
 .poison {
-    background: rgb(119, 71, 119);
+  background: rgb(119, 71, 119);
 }
 .ground {
-    background: sandybrown;
+  background: sandybrown;
 }
 
 .rock {
-    background: burlywood;
+  background: burlywood;
 }
 
 .bug {
-    background: yellowgreen;
+  background: yellowgreen;
 }
 
 .ghost {
-    background: rgb(111, 111, 248);
+  background: rgb(111, 111, 248);
 }
 
 .electric {
-    background: rgb(255, 230, 0);
+  background: rgb(255, 230, 0);
 }
 
 .psychic {
-    background: palevioletred;
+  background: palevioletred;
 }
 
 .ice {
-    background: rgb(113, 238, 255);
+  background: rgb(113, 238, 255);
 }
 
 .dragon {
-    background: cornflowerblue;
+  background: cornflowerblue;
 }
 
 .dark {
-    background: rgb(71, 55, 50);
+  background: rgb(71, 55, 50);
 }
 
 .steel {
-    background: rgb(150, 160, 192);
+  background: rgb(150, 160, 192);
 }
 
 .fairy {
-    background: rgb(236, 213, 236);
-}
-
-li {
-    border-radius: 30%;
-    border: solid;
-    padding: 0px;
-}
-
-li:hover{
-    cursor: pointer;
-
-}
-
-ul {
-    list-style-type: none;
+  background: rgb(236, 213, 236);
 }
