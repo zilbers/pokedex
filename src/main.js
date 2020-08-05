@@ -81,10 +81,16 @@ const searchTypes = async (event) => {
   if (event.target.parentElement.className !== "types") return;
   let type = event.target.classList[1];
   try {
-    const { data } = await axios.get(`${TYPES_URL}${type}`);
-    console.log(data);
-    printTypes(data);
-    return data;
+    //replace Axios with fetch
+    //fetch
+    fetch(`${TYPES_URL}${type}`)
+      .then((res) => res.json())
+      .then((data) => printTypes(data));
+    //Axios
+    // const { data } = await axios.get(`${TYPES_URL}${type}`);
+    // console.log(data);
+    // printTypes(data);
+    // return data;
   } catch {
     createElementWithData(
       `Looking for ${type} didn't work!`,
