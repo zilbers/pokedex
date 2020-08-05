@@ -71,6 +71,10 @@ div {
   text-shadow: 3px 3px #2600ff;
 }
 
+#typeHeader{
+  color: black;
+}
+
 .typeTable {
   background: silver;
   border-radius: 10%;
@@ -81,10 +85,12 @@ div {
 
 .typeTable:hover {
   cursor: pointer;
-  text-shadow: 4px 4px 6px rgba(255, 255, 255, 1);
-  -webkit-box-shadow: 4px 5px 40px -10px rgb(0, 0, 0);
-  -moz-box-shadow: 4px 5px 40px -10px rgb(0, 0, 0);
-  transition: all 0.4s ease 0s;
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 40px -10px rgb(0, 0, 0);
+  -moz-box-shadow: 0px 5px 40px -10px rgb(0, 0, 0);
+  transition: all 0.2s ease 0s;
+  transform: scale(1.05);
+  font-weight: 400;
 }
 
 .pokeDiv {
@@ -104,10 +110,12 @@ div {
 
 .typeBox:hover {
   cursor: pointer;
-  text-shadow: 4px 4px 6px rgba(255, 255, 255, 1);
-  -webkit-box-shadow: 4px 5px 40px -10px rgb(0, 0, 0);
-  -moz-box-shadow: 4px 5px 40px -10px rgb(0, 0, 0);
-  transition: all 0.4s ease 0s;
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 40px -10px rgb(0, 0, 0);
+  -moz-box-shadow: 0px 5px 40px -10px rgb(0, 0, 0);
+  transition: all 0.2s ease 0s;
+  transform: scale(1.05);
+  font-weight: 400;
 }
 
 .noImg {
@@ -116,72 +124,72 @@ div {
 }
 
 .normal {
-  background: silver;
+  background: rgba(192, 192, 192, 0.473);
 }
 
 .grass {
-  background: green;
+  background: rgba(0, 128, 0, 0.473);
 }
 
 .fire {
-  background: red;
+  background: rgba(255, 0, 0, 0.473);
 }
 
 .water {
-  background: lightblue;
+  background: rgba(173, 216, 230, 0.445);
 }
 
 .fighting {
-  background: brown;
+  background: rgba(165, 42, 42, 0.397);
 }
 
 .flying {
-  background: lightskyblue;
+  background: rgba(135, 206, 250, 0.452);
 }
 
 .poison {
-  background: rgb(119, 71, 119);
+  background: rgba(119, 71, 119, 0.466);
 }
 .ground {
-  background: sandybrown;
+  background: rgba(244, 165, 96, 0.466);
 }
 
 .rock {
-  background: burlywood;
+  background: rgba(222, 184, 135, 0.438);
 }
 
 .bug {
-  background: yellowgreen;
+  background: rgba(153, 205, 50, 0.466);
 }
 
 .ghost {
-  background: rgb(111, 111, 248);
+  background: rgba(111, 111, 248, 0.452);
 }
 
 .electric {
-  background: rgb(255, 230, 0);
+  background: rgba(255, 230, 0, 0.459);
 }
 
 .psychic {
-  background: palevioletred;
+  background: rgba(216, 112, 147, 0.466);
 }
 
 .ice {
-  background: rgb(113, 238, 255);
+  background: rgba(113, 238, 255, 0.459);
 }
 
 .dragon {
-  background: cornflowerblue;
+  background: rgba(100, 148, 237, 0.425);
 }
 
 .dark {
-  background: rgb(71, 55, 50);
+  background: rgba(71, 55, 50, 0.459);
 }
 
 .steel {
-  background: rgb(150, 160, 192);
+  background: rgba(150, 160, 192, 0.445);
 }
 
 .fairy {
-  background: rgb(236, 213, 236);
+  background: rgba(236, 213, 236, 0.466);
 }

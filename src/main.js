@@ -118,10 +118,11 @@ function printTypes(data) {
   let results = document.querySelector("#results");
   results.innerHTML = "";
   let allPokes = createElementWithData(
-    `<h2 class="pokeHead">${data.name} Pokemon's</h2> ${names}`,
+    `<h2 id="typeHeader" class="pokeHead">${data.name} Pokemon's</h2> ${names}`,
     "#results"
   );
   allPokes.id = "allPokes";
+  allPokes.className = data.name;
 }
 
 /** Creates an element in document and prints with the data gathered
