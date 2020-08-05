@@ -1,0 +1,196 @@
+body {
+  background-image: url("./background.png");
+  background-color: #90ff8c;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  text-align: center;
+  font-family: "Press Start 2P", cursive;
+}
+
+img {
+  display: block;
+  margin: auto;
+}
+
+div {
+  margin: 10px;
+}
+
+#searchButton {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #60a3bc;
+  padding: 9px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+}
+
+#searchButton:hover {
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
+}
+
+#searchDiv {
+  background-image: url("./input.jpg");
+  background-size: 33% 110%;
+  border-radius: 20%;
+  width: 95%;
+  padding: 20px;
+  height: 100px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+#search {
+  width: 80%;
+  height: 30px;
+  font-size: 16px;
+  border: none;
+}
+
+#results {
+  align-content: center;
+  margin: auto;
+  width: 27%;
+}
+
+#allPokes {
+  position: relative;
+  width: 300%;
+  right: 100%;
+}
+
+.pokeHead {
+  position: relative;
+  color: yellow;
+  margin-top: 10px;
+  text-shadow: 3px 3px #2600ff;
+}
+
+#typeHeader{
+  color: black;
+}
+
+.typeTable {
+  background: silver;
+  border-radius: 10%;
+  border: solid;
+  padding: 3px;
+  display: inline-block;
+}
+
+.typeTable:hover {
+  cursor: pointer;
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 40px -10px rgb(0, 0, 0);
+  -moz-box-shadow: 0px 5px 40px -10px rgb(0, 0, 0);
+  transition: all 0.2s ease 0s;
+  transform: scale(1.05);
+  font-weight: 400;
+}
+
+.pokeDiv {
+  background: rgba(255, 255, 255, 0.493);
+  text-align: left;
+  padding: 20px;
+  font-size: 15px;
+}
+
+.typeBox {
+  position: relative;
+  border-radius: 25%;
+  border: solid;
+  padding: 3px;
+  display: inline-block;
+}
+
+.typeBox:hover {
+  cursor: pointer;
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 40px -10px rgb(0, 0, 0);
+  -moz-box-shadow: 0px 5px 40px -10px rgb(0, 0, 0);
+  transition: all 0.2s ease 0s;
+  transform: scale(1.05);
+  font-weight: 400;
+}
+
+.noImg {
+  height: 96px;
+  width: 96px;
+}
+
+.normal {
+  background: rgba(192, 192, 192, 0.473);
+}
+
+.grass {
+  background: rgba(0, 128, 0, 0.473);
+}
+
+.fire {
+  background: rgba(255, 0, 0, 0.473);
+}
+
+.water {
+  background: rgba(173, 216, 230, 0.445);
+}
+
+.fighting {
+  background: rgba(165, 42, 42, 0.397);
+}
+
+.flying {
+  background: rgba(135, 206, 250, 0.452);
+}
+
+.poison {
+  background: rgba(119, 71, 119, 0.466);
+}
+.ground {
+  background: rgba(244, 165, 96, 0.466);
+}
+
+.rock {
+  background: rgba(222, 184, 135, 0.438);
+}
+
+.bug {
+  background: rgba(153, 205, 50, 0.466);
+}
+
+.ghost {
+  background: rgba(111, 111, 248, 0.452);
+}
+
+.electric {
+  background: rgba(255, 230, 0, 0.459);
+}
+
+.psychic {
+  background: rgba(216, 112, 147, 0.466);
+}
+
+.ice {
+  background: rgba(113, 238, 255, 0.459);
+}
+
+.dragon {
+  background: rgba(100, 148, 237, 0.425);
+}
+
+.dark {
+  background: rgba(71, 55, 50, 0.459);
+}
+
+.steel {
+  background: rgba(150, 160, 192, 0.445);
+}
+
+.fairy {
+  background: rgba(236, 213, 236, 0.466);
+}
