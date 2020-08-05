@@ -16,12 +16,30 @@ div {
   margin: 10px;
 }
 
+#searchButton {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #60a3bc;
+  padding: 9px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+}
+
+#searchButton:hover {
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
+}
+
 #searchDiv {
   background-image: url("./input.jpg");
   background-size: 33% 110%;
   width: 95%;
   padding: 20px;
-  height: 80px;
+  height: 100px;
   position: relative;
   top: 0;
   left: 0;
@@ -29,11 +47,9 @@ div {
 
 #search {
   width: 80%;
-  height: 20px;
-}
-
-#searchButton {
-  height: 20px;
+  height: 30px;
+  font-size: 16px;
+  border: none;
 }
 
 #results {
@@ -49,7 +65,7 @@ div {
 .pokeHead {
   position: relative;
   color: yellow;
-  margin-bottom: 10px;
+  margin-top: 10px;
   text-shadow: 3px 3px #2600ff;
 }
 
