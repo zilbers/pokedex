@@ -11,6 +11,3 @@ Features:
 * In case the pokemon doesn't exist, not found message is returned.
 * On click on one of the pokemon types show list of all the pokemon's names that related to this type.
 * On Click on one of the pokemon name change the pokedex context by changing the input value to the name of the pokemon.
-
-deployed:
-https://pokedex.zilbers.vercel.app
