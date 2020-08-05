@@ -2,10 +2,11 @@
 
 the API used: https://pokeapi.co/
 
-Before:
-* Create new private repo in your github account
-* (OPTIONAL) use index.html/main.js as an examples (don't clone this repo)
-* Try to commit any time you done with a task
+Features:
+* Search Pokemon in search bar.
+* Reaches pokeapi and asks for info about Pokemon's.
+* Shows Pokemon info on screen.
+* Shows sprite and changes back and forth.
 
 Tasks:
 * Read about cross origin and way to handle it

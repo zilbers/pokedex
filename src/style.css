@@ -59,7 +59,9 @@ div {
 }
 
 #allPokes {
-  width: 200%;
+  position: relative;
+  width: 300%;
+  right: 100%;
 }
 
 .pokeHead {
