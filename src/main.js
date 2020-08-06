@@ -25,11 +25,8 @@ const searchPokemon = async (event) => {
     printInfo(data);
     return data;
   } catch {
-    createElementWithData(
-      `${pokemonIdOrName} doesn't exist!`,
-      "#results",
-      "div"
-    );
+    let errorBox = document.querySelector("#results");
+    errorBox.innerHTML =  `${pokemonIdOrName} doesn't exist!`;
   }
 };
 
