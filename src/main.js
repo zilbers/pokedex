@@ -1,7 +1,7 @@
-SPRITES_URL =
+const SPRITES_URL =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
 
-TYPES_URL = "https://pokeapi.co/api/v2/type/";
+const TYPES_URL = "https://pokeapi.co/api/v2/type/";
 
 /** Searches the pokemon on pokeapi site
  * @param {function} [action] The action to do with the data
@@ -79,14 +79,14 @@ const searchTypes = async (event) => {
   let type = event.target.classList[1];
   try {
     // //replace Axios with fetch
-    // //fetch
-    // fetch(`${TYPES_URL}${type}`)
-    //   .then((res) => res.json())
-    //   .then((data) => printTypes(data));
+    //fetch
+    fetch(`${TYPES_URL}${type}`)
+      .then((res) => res.json())
+      .then((data) => printTypes(data));
     //Axios
-    const { data } = await axios.get(`${TYPES_URL}${type}`);
-    console.log(data);
-    printTypes(data);
+    // const { data } = await axios.get(`${TYPES_URL}${type}`);
+    // console.log(data);
+    // printTypes(data);
     return data;
   } catch {
     createElementWithData(
